@@ -2,20 +2,20 @@
 import requests
 import pymysql
 
-@pytest.mark.skip
-@pytest.mark.links_shop
+
+
 def serviceability_link_shops(path_file):
-    """коннект к базе, только чтение"""
+    """коннект к базе, пользователь только на чтение"""
     try:
         with open(path_file) as dt_acc:
-            param_db = dt_acc.readlines()
+            param_db = [val.strip() for val in dt_acc]
 
         connect = pymysql.connect(
-            host=param_db[0].strip(),
-            db=param_db[1].strip(),
-            user=param_db[2].strip(),
-            password=param_db[3].strip(),
-            charset=param_db[4].strip(),
+            host=param_db[0],
+            db=param_db[1],
+            user=param_db[2],
+            password=param_db[3],
+            charset=param_db[4],
             cursorclass=pymysql.cursors.DictCursor
         )
         print("Успешное подключение!", '\n')
@@ -39,7 +39,7 @@ def serviceability_link_shops(path_file):
                     count_error += 1
                     continue
 
-        print(f"\nТест кодов ответов ссылок завершился! Ошибок - {count_error}\n")
+        print(f"\nПроверка кодов ответов ссылок завершена! Ошибок - {count_error}\n")
         for key, value in dict_error.items():
             print(key, value)
     except:

@@ -16,7 +16,7 @@ user_data = {1: ['test_mnemag@ya.ru', 'testpass', 'testpass'],
 
 
 class TestMainRegister():
-    @pytest.mark.high_importance()
+    @pytest.mark.guest()
     def test_positive_guest_registration_form(self, browser):
         # заполнение формы регистрации
         browser.get(link)
