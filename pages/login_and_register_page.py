@@ -1,7 +1,6 @@
 ﻿# pytest -s -v -m high_importance test_register.py
 # pytest -s -v -m "not high_importance" test_register.py
 # pytest -s -v -m "high_importance or high_importance2" test_register.py
-
 # pytest -s -v -m high_importance --tb=line --reruns 1 --browser_name=firefox  test_register.py
 
 import time
@@ -17,7 +16,7 @@ user_data = {1: ['test_mnemag@ya.ru', 'testpass', 'testpass'],
 
 
 class TestMainRegister():
-    @pytest.mark.high_importance(reruns=2)
+    @pytest.mark.high_importance()
     def test_positive_guest_registration_form(self, browser):
         # заполнение формы регистрации
         browser.get(link)

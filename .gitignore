@@ -1,0 +1,6 @@
+/.pytest_cache/
+/venv/
+/geckodriver.log
+.idea/
+__pycache__/
+error_classes.py

@@ -1,14 +1,15 @@
 ﻿import pytest
+import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 
-def pytest_add_option(parser):
-    """новые параметры для командной строки"""
+def pytest_addoption(parser):
+    """новые параметры командной строки"""
     parser.addoption('--browser_name', action='store', default='chrome',
-                     help="Choose browser: chrome or firefox")
+                     help="Выбранный браузер")
     parser.addoption('--lang', action='store', default='ru',
-                     help="Choose language")
+                     help="выбранный язык")
 
 
 @pytest.fixture(scope="function")  # function, class, module, session
@@ -31,4 +32,5 @@ def browser(request):
 
     browser.implicitly_wait(3)  # ожидание 3 секунды, для случаев задержек в работе сайта
     yield browser
+    time.sleep(3)
     browser.quit()
