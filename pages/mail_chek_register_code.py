@@ -2,9 +2,9 @@ import imaplib
 import email
 
 
-def mail_check():
+def mail_check(file_path = "mail_access.txt"):
     # получить логин/пароль доступа к почтовому ящику
-    with open("pages/mail_access.txt", "r", encoding="UTF-8") as mail_access:
+    with open(file_path, "r", encoding="UTF-8") as mail_access:
         param_mail = [val.strip() for val in mail_access]
 
     # Создаем сессию для подключения к почтовому ящику по IMAP и заносим ее в переменную mail

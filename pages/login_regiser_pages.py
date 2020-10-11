@@ -5,7 +5,6 @@ import time
 from .base_page import BasePage
 from .mail_chek_register_code import mail_check
 
-from .locators import BasePageLocators
 from .locators import RegAuthLocators
 
 
