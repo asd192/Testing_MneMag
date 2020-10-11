@@ -16,6 +16,20 @@ class BasePageLocators():
     # год копирайта, версия для ПК
     COPYRIGHT = (By.CLASS_NAME, "tc_copytxt")
 
+class RegAuthLocators():
+    # регистрация и авторизация
+    REGISTER_NICK_NAME = (By.ID, "nickname")
+    REGISTER_EMAIL = (By.ID, "email")
+    REGISTER_PASSWORD_1 = (By.ID, "password1")
+    REGISTER_PASSWORD_2 = (By.ID, "password2")
+
+    REGISTER_BUTTON_RESUME = (By.XPATH, "//*[@value='Продолжить']")
+    REGISTER_CAPTCHA = (By.CSS_SELECTOR, "#tab-regcaptcha .error_text")
+    REGISTER_MESSAGE_1 = (By.CLASS_NAME, "success")
+    REGISTER_MESSAGE_2 = (By.CSS_SELECTOR, ".info b")
+
+    REGISTER_REG_TOKEN = (By.ID, "reg_token")
+
 
 class MainPageLocators():
     # виджеты главной

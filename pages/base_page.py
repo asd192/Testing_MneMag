@@ -56,6 +56,6 @@ class BasePage():
         return True
 
     def copyright_checks(self):
-        """проерка актуальности года копирайта"""
+        """проверка актуальности года копирайта"""
         assert self.browser.find_element(*BasePageLocators.COPYRIGHT).text[-4:] == str(datetime.now().year), \
             "год копирайта не соответствует текущему"

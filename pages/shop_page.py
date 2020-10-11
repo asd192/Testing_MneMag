@@ -1,0 +1,2 @@
+class ShopPage(BasePage):
+    pass

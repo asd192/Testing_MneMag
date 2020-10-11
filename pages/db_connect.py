@@ -8,8 +8,8 @@ def connect_db_user_read_and_write():
 def connect_db_user_read_only():
     """коннект к базе, только чтение"""
     try:
-        with open("database_access.txt") as da_ini:
-            param_db = da_ini.readlines()
+        with open("database_access.txt") as dt_acc:
+            param_db = [val.strip() for val in dt_acc]
 
         connect = pymysql.connect(
             host=param_db[0].strip(),
