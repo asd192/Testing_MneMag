@@ -12,7 +12,6 @@ link = "https://mnemag.ru/"
 
 @pytest.mark.guest
 class TestGuest():
-    @pytest.mark.skip
     def test_guest_checking_whether_the_authorization_form_is_available(self, browser):
         """проверка исправности формы авторизации для гостей"""
         page = MainPage(browser, link)
@@ -20,7 +19,6 @@ class TestGuest():
         page.go_to_login_page()
         page.checking_guest_whether_the_authorization_form_is_available()
 
-    @pytest.mark.skip
     def test_guest_checking_for_widgets(self, browser):
         """проверка наличия требуемых виджетов"""
         page = MainPage(browser, link)
@@ -40,6 +38,3 @@ class TestUser():
         page.register_user()
 
         time.sleep(5)
-
-
-

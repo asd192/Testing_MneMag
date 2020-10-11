@@ -2,9 +2,14 @@ import imaplib
 import email
 
 
-def mail_check(file_path = "mail_access.txt"):
+def mail_check():
     # получить логин/пароль доступа к почтовому ящику
-    with open(file_path, "r", encoding="UTF-8") as mail_access:
+    if __name__ == '__main__':
+        mail_access = "mail_access.txt"
+    else:
+        mail_access = "pages/mail_access.txt"
+
+    with open(mail_access, "r", encoding="UTF-8") as mail_access:
         param_mail = [val.strip() for val in mail_access]
 
     # Создаем сессию для подключения к почтовому ящику по IMAP и заносим ее в переменную mail
@@ -47,6 +52,8 @@ def mail_check(file_path = "mail_access.txt"):
 
     code_confirmation = message[first_symbol_code + 1: last_symbol_code]
     print(code_confirmation)
+
     return code_confirmation
 
-mail_check()
+if __name__ == '__main__':
+    mail_check()

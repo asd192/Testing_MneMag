@@ -1,7 +1,5 @@
-﻿import pytest
-import requests
+﻿import requests
 import pymysql
-
 
 
 def serviceability_link_shops_user_read(path_file):
@@ -22,7 +20,7 @@ def serviceability_link_shops_user_read(path_file):
 
         # запрос ссылок из БД
         with connect.cursor() as cursor:
-            sql = 'SELECT s_url FROM cms_con_shop WHERE id != 65 AND is_deleted is null AND date_approved is not null'
+            sql = "SELECT s_url FROM cms_con_shop WHERE id != 65 AND is_deleted is null AND date_approved is not null"
             cursor.execute(sql)
             print(cursor.description, '\n')
 
