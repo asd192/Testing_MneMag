@@ -5,3 +5,5 @@
 __pycache__/
 error_classes.py
 message_mail.txt
+no_tst.py
+debug.log

@@ -20,8 +20,9 @@ def connect_db_user_read_only():
             cursorclass=pymysql.cursors.DictCursor
         )
         print("Успешное подключение!", '\n')
+        return connect
     except:
         print("Не удалось подключиться к БД(на чтение)")
     finally:
         connect.close()
-    return connect
+
