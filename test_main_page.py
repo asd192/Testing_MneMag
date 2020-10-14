@@ -30,6 +30,7 @@ class TestGuest():
 
 @pytest.mark.user
 class TestUser():
+    @pytest.mark.register
     def test_registration_of_user(self, browser):
         """регистрация нового пользователя с главной страницы"""
         page = LoginRegisterPage(browser, link)

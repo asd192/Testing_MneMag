@@ -5,7 +5,8 @@
 <pre>
     — <b>главная страница, гостевые тесты</b> - <i>pytest -m guest -s -v --tb=line --browser_name=chrome --lang=ru test_main_page.py</i>
     — <b>главная страница, тесты для залогиненных</b> - <i>pytest -m user -s -v --tb=line --browser_name=chrome --lang=ru test_main_page.py</i>
-    — <b>ссылки, целостность (по коду 200) - <i>pytest</b> -m links_shops -s -v --tb=line test_shop_page.py</i>
+    — <b>ссылки, целостность (по коду 200)</b> - <i>pytest -m links_shops -s -v --tb=line test_shop_page.py</i>
+    — <b>регистрация с главной</b> - <i>pytest --reruns 1 -m register -s -v --tb=line test_main_page.py</i>
 </pre>
 
 <h2>Файлы</h2>
