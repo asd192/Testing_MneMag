@@ -41,5 +41,5 @@ def serviceability_link_shops_user_read(path_file):
         for key, value in dict_error.items():
             print(key, value)
     except:
-        print("Не удалось проверить ссылки магазинов")
+        print("Не удалось проверить ссылки магазинов. Ошибка!")
         raise
