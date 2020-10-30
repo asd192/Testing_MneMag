@@ -3,7 +3,7 @@ import pymysql
 
 
 def serviceability_link_shops_user_read(path_file):
-    """коннект к базе, пользователь 'только на чтение'"""
+    """коннект к базе"""
     try:
         with open(path_file) as dt_acc:
             param_db = [val.strip() for val in dt_acc]
